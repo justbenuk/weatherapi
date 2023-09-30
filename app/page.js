@@ -48,12 +48,12 @@ export default function Home() {
   }
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 h-full text-white font-bold text-xl">
-      <div className='col-span-1 md:col-span-2 lg:col-span-3'>
+      <div className='col-span-1 md:col-span-2 lg:col-span-3 h-full'>
         <div className=' flex flex-col justify-between items-between h-full p-12'>
         <div>My Weather App</div>
-        <div className="flex flex-row items-center gap-12">
+        <div className="flex flex-wrap items-center gap-4 lg:gap-12">
             <div>
-            <h1 className="text-6xl">{data.temp} &#8451;</h1>
+            <h1 className="text-3xl lg:text-6xl">{data.temp} &#8451;</h1>
             </div>
             <div>
             <h1>{data.location}</h1>
@@ -68,7 +68,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='bg-black/30 col-span-1 md:col-span-1 lg:col-span-2'>
+      <div className='bg-black/30 col-span-1 md:col-span-1 lg:col-span-2 py-4 min-h-full'>
         <div className="flex flex-col gap-12 p-12">
           <form className="w-full">
             <div className="flex gap-4 w-full">

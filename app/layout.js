@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className + 'min-h-screen'} style={{backgroundImage: `url("/assets/bg.jpg")`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <body className={inter.className + 'min-h-screen'} style={{backgroundImage: `url("/assets/bg.jpg")`, backgroundSize: 'cover', backgroundPosition: 'cover', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed'}}>
         <main className='h-[100vh]'>{children}</main>
       </body>
     </html>
