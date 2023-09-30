@@ -14,8 +14,10 @@ export default function Home() {
     region: '',
     country: '',
   }
+
+  const FORMSTATE = ''
   const [data, setData] = useState(INITIALSTATE)
-  const [formLocation, setFormLocation] = useState('')
+  const [formLocation, setFormLocation] = useState(FORMSTATE)
   
   function handleChange(e){
     setFormLocation(e.target.value)
@@ -39,6 +41,7 @@ export default function Home() {
         region: result.location.region,
         country: result.location.country
       })
+      setFormLocation(FORMSTATE)
     } catch (error) {
 	    console.error(error);
     }
@@ -69,7 +72,7 @@ export default function Home() {
         <div className="flex flex-col gap-12 p-12">
           <form className="w-full">
             <div className="flex gap-4 w-full">
-              <input className="bg-transparent border-b border-white w-full focus:border-b focus:outline-none" type='text' name='location' placeholder='Location, Postcode, City or Area' onChange={handleChange} />
+              <input className="bg-transparent border-b border-white w-full focus:border-b focus:outline-none" type='text' name='location' placeholder='Location, Postcode, City or Area' onChange={handleChange} value={formLocation}/>
               <button className="bg-green-500/75 px-4 py-2" onClick={handleSubmit}>S</button>
             </div>
           </form>
